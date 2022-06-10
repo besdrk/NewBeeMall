@@ -8,7 +8,7 @@ RUN mvn clean package
 From openjdk:8-jre
 
 COPY --from=builder target/*.jar app.jar
-COPY --from=builder src/main/resources/upload.zip
+COPY --from=builder src/main/resources/upload.zip upload.zip
 
 RUN unzip -d /opt/image/upload/ upload.zip
 
